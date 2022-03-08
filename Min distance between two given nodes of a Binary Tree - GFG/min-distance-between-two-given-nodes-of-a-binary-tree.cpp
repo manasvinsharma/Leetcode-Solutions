@@ -93,6 +93,10 @@ struct Node
     Node* left, * right;
 }; */
 
+
+
+// Prerequisite for this question is how to find LCA in O(n)time & O(1)space
+
 class Solution{
     public:
     
