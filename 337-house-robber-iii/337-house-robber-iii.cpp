@@ -11,6 +11,11 @@
  */
 class Solution {
 public:
+    // We will traverse in Postorder format (bottom to up)
+    // For each node we will return a pair{include val, exclude val}
+    // if we include a node in our answer then we cant include any of its childs
+    // if we dont include a node in our answer then can take or not take any of its child
+    
     pair<int,int> solve(TreeNode* root)
     {
         if(!root)
@@ -18,8 +23,10 @@ public:
         
         pair<int,int>l = solve(root->left);
         pair<int,int>r = solve(root->right);
-        
+
+        // if we include a node in our answer then we cant include any of its childs
         int inc = l.second + r.second + root->val;
+        // if we dont include a node in our answer then can take or not take any of its child
         int exc = max(l.first,l.second) + max(r.first,r.second);
         
         return {inc,exc};
