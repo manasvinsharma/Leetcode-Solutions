@@ -5,6 +5,7 @@ using namespace std;
  // } Driver Code Ends
 class Solution {
 	public:
+	// O(n)time & O(26) space
 		string FirstNonRepeating(string s){
 		    // Code here
 		    queue<char>q;
@@ -25,7 +26,7 @@ class Solution {
 		            q.pop();
 		        }
 		        
-		        
+		        // this loop is for testcases like this -> aabcbded
 		        while(!q.empty() && mp[q.front()-'a']!=1)
 		            q.pop();
 		        
