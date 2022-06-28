@@ -12,7 +12,9 @@ class Solution
     int spanningTree(int v, vector<vector<int>> adj[])
     {
         // code here
+        // min heap
         priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> >pq;
+        
         vector<bool>inc(v,false);
         vector<int>parent(v,-1);
         vector<int>key(v,INT_MAX);
@@ -33,7 +35,9 @@ class Solution
             
             for(vector<int> child : adj[node])
             {
+                // child node
                 int childNode = child[0];
+                // weight of the edge connecting child node & parent node
                 int weight = child[1];
                 
                 if(inc[childNode]==false && key[childNode]>weight)
