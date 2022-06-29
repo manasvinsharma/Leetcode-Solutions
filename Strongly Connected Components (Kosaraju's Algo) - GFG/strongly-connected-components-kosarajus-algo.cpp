@@ -59,6 +59,7 @@ class Solution
         
         visited.clear();
         
+        // remember to use the nodes from stack only 
         while(!s.empty())
         {
             int node = s.top();
