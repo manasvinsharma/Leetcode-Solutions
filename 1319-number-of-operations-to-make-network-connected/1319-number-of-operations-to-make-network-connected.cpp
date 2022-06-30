@@ -19,12 +19,14 @@ public:
         
         vector<int>arr[n];
         
+        // create a adjacency list
         for(auto vec : connections)
         {
             arr[vec[0]].push_back(vec[1]);
             arr[vec[1]].push_back(vec[0]);
         }
         
+        // count number of components
         for(int i=0;i<n;i++)
         {
             if(visited.find(i)==visited.end())
@@ -35,6 +37,9 @@ public:
             }
         }
         
+        // now here is simple maths
+        
+        // to connect total k nodes we need atleast k-1 edges
         if(edges < (n-1))
             return -1;
         else
