@@ -10,13 +10,16 @@ public:
     
     bool DFS(vector<vector<char>>& board, string &word, int i, int x, int y)
     {
+        // if its last character of word & it matches to current character of board
         if(i==word.size()-1 && board[x][y]==word[i])
         return true;
+        // if its last character of word & do not matches the current character of board
         else if(i==word.size() && board[x][y]!=word[i])
         return false;
         
         for(pair<int,int> pr : mp[word[i+1]])
         {
+            // check that this cell is already not visited. And check if this cell is adjacent to the current cell {x,y}
             if(visited[pr.first][pr.second]==0 && (abs(x-pr.first)+abs(y-pr.second))<=1)
             {
                 visited[pr.first][pr.second] = 1;
@@ -24,6 +27,7 @@ public:
                 if(DFS(board, word, i+1, pr.first, pr.second))
                 return true;
                 
+                // backtrack
                 visited[pr.first][pr.second] = 0;
             }
         }
@@ -55,6 +59,7 @@ public:
                 if(DFS(board, word, 0, pr.first, pr.second))
                 return true;
                 
+                // backtrack
                 visited[pr.first][pr.second] = 0;
             }
         }
