@@ -8,6 +8,7 @@ public:
     unordered_map<string, vector<string>>mp;
     unordered_set<string>visited;
     
+    // apply BFS to find shotest path (minimum steps needed to reach targetWord from startWord)
     int BFS(string &str, string &targetWord, vector<string> &wordList)
     {
         queue<pair<string,int>>q;
@@ -35,6 +36,7 @@ public:
             }
         }
         
+        // if not possible to reach at targetWord
         return INT_MAX;
     }
     
@@ -42,6 +44,7 @@ public:
         // Code here
         int ans = INT_MAX;
         
+        // create a graph
         for(string str1 : wordList)
         {
             for(string str2 : wordList)
@@ -66,6 +69,7 @@ public:
             }
         }
         
+        // try to start BFS with each node of graph (if possible)
         for(string str : wordList)
         {
             if(str.size() == startWord.size())
@@ -90,6 +94,7 @@ public:
                     
                     ans = min(val,ans);
                 }
+                // handles if startWord is already present in our Graph (wordList)
                 else if(diff==0)
                 {
                     visited.clear();
