@@ -46,6 +46,7 @@ class Solution
         priority_queue <Three, vector<Three>, Compare> pq;
         vector<int>ans;
         
+        // at a time heap will only have at max k elements
         for(int i=0;i<m;i++)
         {
             Three x = Three(arr[i][0],i,0);
@@ -54,13 +55,14 @@ class Solution
         
         while(!pq.empty())
         {
+            // remove the top
             Three x = pq.top();
             pq.pop();
-            
             ans.push_back(x.val);
             
             int row = x.row, col = x.col;
             
+            // add the adjacent value of the removed element from array
             if(col<n-1)
             {
                 col++;
