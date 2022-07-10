@@ -49,8 +49,10 @@ public:
 
     void solve(int &n, int row)
     {
+        // if reached here means that we are able to set all queens
         if(row == n)
         {
+            // saving the current answer
             vector<int>temp;
             for(int i=0;i<n;i++)
             {
