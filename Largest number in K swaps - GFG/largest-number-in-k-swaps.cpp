@@ -18,9 +18,12 @@ class Solution
         if(str > ans)
         ans = str;
         
+        // if swaps become zero or if we reach the end of string
         if(k==0 || curr==n)
         return ;
         
+        // optimization
+        // if already a bigger number is found then no need to go with a smaller number
         if(curr!=0 && ans[curr-1]>str[curr-1])
         return ;
         
@@ -44,6 +47,7 @@ class Solution
        // code here
        int n = str.size();
        
+       // create a dummy string just to compare
        for(int i=0;i<n;i++)
        ans+="0";
        
