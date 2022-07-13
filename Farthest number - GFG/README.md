@@ -1,5 +1,5 @@
 # Farthest number
-## Medium 
+##  Medium 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given an array <strong>A</strong><strong>rr[]</strong>&nbsp;of size&nbsp;<strong>N</strong>. For every element in the array, the task is to find the index of the farthest element in the array to the right which is smaller than the current element. If no such number exists then print&nbsp;<strong>-1</strong>.</span><br>
 <strong><span style="font-size:18px">Note: </span></strong><span style="font-size:18px">0 based indexing.</span></p>
