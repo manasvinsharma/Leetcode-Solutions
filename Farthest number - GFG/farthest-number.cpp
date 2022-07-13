@@ -8,7 +8,8 @@ using namespace std;
 
 // 3, 1, 5, 2, 4 Arr
 // 1, 1, 2, 2, 4 Smallest array
-// 
+// Smallest array keeps the "smallest number" present on right of each element in whole array
+// then we apply BS on smallest array & find the farthest index. Smallest array will always be in sorted order.
 class Solution{   
   public:
     int binary_search(int low, int high, vector<int>& smallest, int val)
