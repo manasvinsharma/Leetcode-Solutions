@@ -1,8 +1,3 @@
-// 5   3   4   2   6
-// 5   4   4  3.5  4
-
-// 
-
 class MedianFinder {
 public:
     priority_queue<double, vector<double>, greater<double>>mn;
